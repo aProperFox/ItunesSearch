@@ -3,22 +3,29 @@ package com.aproperfox.itunessearch
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.aproperfox.itunessearch.R.id.fab
+import com.aproperfox.itunessearch.adapters.BroadSearchAdapter
 
 import kotlinx.android.synthetic.main.activity_select_category.*
 
 class SelectCategoryActivity : AppCompatActivity() {
+
+  private lateinit var adapter: BroadSearchAdapter
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_select_category)
     setSupportActionBar(toolbar)
 
+    adapter = BroadSearchAdapter()
+    recycler.adapter = adapter
+    recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
     fab.setOnClickListener { view ->
-      Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-          .setAction("Action", null).show()
+
     }
   }
 

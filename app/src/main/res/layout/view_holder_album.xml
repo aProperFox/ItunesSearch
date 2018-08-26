@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="60dp"
+  android:clickable="true"
+  android:focusable="true"
+  android:background="@android:drawable/list_selector_background">
+
+  <ImageView
+    android:id="@+id/imageViewAlbum"
+    android:layout_width="60dp"
+    android:layout_height="0dp"
+    android:scaleType="centerCrop"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:src="@android:drawable/ic_menu_gallery"/>
+
+  <TextView
+    android:id="@+id/textViewTitle"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:fontFamily="sans-serif"
+    android:paddingEnd="@dimen/margin_small"
+    android:paddingStart="@dimen/margin_small"
+    android:paddingBottom="2dp"
+    android:textSize="@dimen/text_size_card_title"
+    android:textStyle="bold"
+    android:gravity="bottom"
+    android:textColor="@color/iTunesBar"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/imageViewAlbum"
+    app:layout_constraintBottom_toTopOf="@+id/textViewArtist"
+    tools:text="Blanco McDonco"/>
+
+  <TextView
+    android:id="@+id/textViewArtist"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:fontFamily="sans-serif"
+    android:paddingEnd="@dimen/margin_small"
+    android:paddingStart="@dimen/margin_small"
+    android:paddingTop="2dp"
+    android:textSize="@dimen/text_size_card_content"
+    android:gravity="top"
+    android:textColor="@color/iTunesText"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/imageViewAlbum"
+    app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+    app:layout_constraintBottom_toBottomOf="parent"
+    tools:text="Pat Benetar"/>
+
+</android.support.constraint.ConstraintLayout>
