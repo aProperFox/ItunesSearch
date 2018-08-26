@@ -1,6 +1,7 @@
 package com.aproperfox.itunessearch
 
 import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.content.Context
 import android.content.Intent
@@ -87,6 +88,8 @@ class SelectCategoryActivity : AppCompatActivity() {
       override fun onQueryTextSubmit(query: String?): Boolean {
         fab.visibility = View.VISIBLE
         bottomBar.visibility = View.INVISIBLE
+        if (query != null)
+          viewModel.search(query)
         return true
       }
 
@@ -115,7 +118,21 @@ class SelectCategoryActivity : AppCompatActivity() {
     anim.start()
     searchView.requestFocus()
     val inputService = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-    inputService.showSoftInput(searchView, InputMethodManager.SHOW_FORCED)
-    fab.visibility = View.INVISIBLE
+    anim.addListener(object : Animator.AnimatorListener {
+      override fun onAnimationRepeat(animation: Animator?) {
+      }
+
+      override fun onAnimationEnd(animation: Animator?) {
+        inputService.showSoftInput(searchView, InputMethodManager.SHOW_FORCED)
+        fab.visibility = View.INVISIBLE
+      }
+
+      override fun onAnimationCancel(animation: Animator?) {
+      }
+
+      override fun onAnimationStart(animation: Animator?) {
+      }
+
+    })
   }
 }

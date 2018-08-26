@@ -1,6 +1,6 @@
 package com.aproperfox.itunessearch.api
 
-import com.aproperfox.itunessearch.api.models.SearchResults
+import com.aproperfox.itunessearch.api.models.SearchResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query
@@ -19,24 +19,24 @@ interface iTunesSearchApi {
       @Query("lang") language: String? = Locale.US.language,
       @Query("version") version: Int? = null,
       @Query("explicit") explicit: String? = null
-  ) : Single<List<SearchResults>>
+  ) : Single<SearchResponse>
 
   @GET("lookup")
-  fun lookupById(@Query("id") iTunesId: Int) : Single<List<SearchResults>>
+  fun lookupById(@Query("id") iTunesId: Int) : Single<SearchResponse>
 
   @GET("lookup")
-  fun lookupByArtistId(@Query("amgArtistId") vararg amgArtistId: Int) : Single<List<SearchResults>>
+  fun lookupByArtistId(@Query("amgArtistId") vararg amgArtistId: Int) : Single<SearchResponse>
 
   @GET("lookup")
-  fun lookupByAlbumId(@Query("amgAlbumId") vararg amgAlbumId: Int) : Single<List<SearchResults>>
+  fun lookupByAlbumId(@Query("amgAlbumId") vararg amgAlbumId: Int) : Single<SearchResponse>
 
   @GET("lookup")
-  fun lookupByVideoId(@Query("amgVideoId") vararg amgVideoId: Int) : Single<List<SearchResults>>
+  fun lookupByVideoId(@Query("amgVideoId") vararg amgVideoId: Int) : Single<SearchResponse>
 
   @GET("lookup")
-  fun lookupByUPC(@Query("upc") upc: Int) : Single<List<SearchResults>>
+  fun lookupByUPC(@Query("upc") upc: Int) : Single<SearchResponse>
 
   @GET("lookup")
-  fun lookupByISBN(@Query("isbn") isbn: Int) : Single<List<SearchResults>>
+  fun lookupByISBN(@Query("isbn") isbn: Int) : Single<SearchResponse>
 
 }

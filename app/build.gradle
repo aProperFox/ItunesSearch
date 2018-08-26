@@ -34,10 +34,12 @@ dependencies {
   implementation dependencies.gson
   implementation dependencies.gsonConverter
   implementation dependencies.okHttp
+  implementation dependencies.okHttpLogging
   implementation dependencies.picasso
   implementation dependencies.retrofit
   implementation dependencies.rxAndroid
   implementation dependencies.rxJava
   implementation dependencies.rxJavaAdapter
   testImplementation dependencies.junit
+  testImplementation dependencies.mockito
 }

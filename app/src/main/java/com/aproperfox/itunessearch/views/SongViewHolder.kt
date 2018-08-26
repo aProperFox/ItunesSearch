@@ -17,7 +17,12 @@ class SongViewHolder(parent: ViewGroup, private val clickListener: (PayloadData)
     ) {
 
   init {
-    itemView.setOnClickListener { clickListener(data.payloadData) }
+    itemView.apply {
+      isClickable = true
+      isFocusable = true
+      setBackgroundResource(android.R.drawable.list_selector_background)
+      setOnClickListener { clickListener(data.payloadData) }
+    }
   }
 
   override fun bind(data: ViewHolderMediaData) {
