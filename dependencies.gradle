@@ -16,10 +16,12 @@ ext {
       constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayout",
       design          : "com.android.support:design:$versions.support",
       gson            : "com.google.code.gson:gson:$versions.gson",
+      gsonConverter   : "com.squareup.retrofit2:converter-gson:$versions.retrofit",
       junit           : "junit:junit:$versions.junit",
       okHttp          : "com.squareup.okhttp3:okhttp:$versions.okHttp",
       picasso         : "com.squareup.picasso:picasso:$versions.picasso",
       retrofit        : "com.squareup.retrofit2:retrofit:$versions.retrofit",
-      rxJava          : "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+      rxJava          : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
+      rxJavaAdapter   : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
   ]
 }

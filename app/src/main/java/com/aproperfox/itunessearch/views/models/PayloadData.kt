@@ -4,5 +4,6 @@ import com.aproperfox.itunessearch.api.models.MediaType
 
 data class PayloadData(
     val id: Int,
-    val category: MediaType
+    val category: MediaType,
+    val viewUrl: String
 )

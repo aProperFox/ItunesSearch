@@ -19,24 +19,24 @@ interface iTunesSearchApi {
       @Query("lang") language: String? = Locale.US.language,
       @Query("version") version: Int? = null,
       @Query("explicit") explicit: String? = null
-  ) : Single<SearchResults>
+  ) : Single<List<SearchResults>>
 
   @GET("lookup")
-  fun lookupById(@Query("id") iTunesId: Int) : Single<SearchResults>
+  fun lookupById(@Query("id") iTunesId: Int) : Single<List<SearchResults>>
 
   @GET("lookup")
-  fun lookupByArtistId(@Query("amgArtistId") vararg amgArtistId: Int) : Single<SearchResults>
+  fun lookupByArtistId(@Query("amgArtistId") vararg amgArtistId: Int) : Single<List<SearchResults>>
 
   @GET("lookup")
-  fun lookupByAlbumId(@Query("amgAlbumId") vararg amgAlbumId: Int) : Single<SearchResults>
+  fun lookupByAlbumId(@Query("amgAlbumId") vararg amgAlbumId: Int) : Single<List<SearchResults>>
 
   @GET("lookup")
-  fun lookupByVideoId(@Query("amgVideoId") vararg amgVideoId: Int) : Single<SearchResults>
+  fun lookupByVideoId(@Query("amgVideoId") vararg amgVideoId: Int) : Single<List<SearchResults>>
 
   @GET("lookup")
-  fun lookupByUPC(@Query("upc") upc: Int) : Single<SearchResults>
+  fun lookupByUPC(@Query("upc") upc: Int) : Single<List<SearchResults>>
 
   @GET("lookup")
-  fun lookupByISBN(@Query("isbn") isbn: Int) : Single<SearchResults>
+  fun lookupByISBN(@Query("isbn") isbn: Int) : Single<List<SearchResults>>
 
 }

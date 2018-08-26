@@ -6,8 +6,8 @@
     <item name="colorPrimary">@color/colorPrimary</item>
     <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     <item name="colorAccent">@color/colorAccent</item>
-    <item name="textColorPrimary">@color/colorPrimaryDark</item>
-    <item name="textColorSecondary">@color/colorPrimary</item>
+    <item name="android:textColorPrimary">@color/colorPrimaryDark</item>
+    <item name="android:textColorSecondary">@color/colorPrimary</item>
   </style>
 
   <style name="AppTheme.NoActionBar">
@@ -20,27 +20,27 @@
   </style>
 
   <style name="AppTheme.TextAppearance.CardTitle">
-    <item name="textSize">@dimen/text_size_card_title</item>
-    <item name="textColor">@color/colorPrimaryDark</item>
+    <item name="android:textSize">@dimen/text_size_card_title</item>
+    <item name="android:textColor">@color/colorPrimaryDark</item>
     <item name="android:textStyle">bold</item>
   </style>
 
   <style name="AppTheme.TextAppearance.CardContent">
-    <item name="textSize">@dimen/text_size_card_content</item>
-    <item name="textColor">@color/colorPrimary</item>
+    <item name="android:textSize">@dimen/text_size_card_content</item>
+    <item name="android:textColor">@color/colorPrimary</item>
   </style>
 
   <style name="AppTheme.TextAppearance.Header">
-    <item name="textSize">@dimen/text_size_header</item>
-    <item name="textColor">@color/colorPrimaryDark</item>
-    <item name="fontFamily">sans-serif-condensed</item>
+    <item name="android:textSize">@dimen/text_size_header</item>
+    <item name="android:textColor">@color/colorPrimaryDark</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
     <item name="android:textStyle">bold</item>
   </style>
 
   <style name="AppTheme.TextAppearance.Search">
-    <item name="fontFamily">sans-serif</item>
-    <item name="textSize">@dimen/text_size_title</item>
-    <item name="textColor">@android:color/white</item>
+    <item name="android:fontFamily">sans-serif</item>
+    <item name="android:textSize">@dimen/text_size_card_title</item>
+    <item name="android:textColor">@android:color/white</item>
   </style>
 
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

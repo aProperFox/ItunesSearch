@@ -18,7 +18,7 @@ class BroadSearchAdapter(private val clickListener: (PayloadData) -> Unit) : Rec
     SeeMore
   }
 
-  lateinit var items: List<ViewHolderMediaData>
+  var items: List<ViewHolderMediaData> = emptyList()
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder =
       when (values()[viewType]) {
