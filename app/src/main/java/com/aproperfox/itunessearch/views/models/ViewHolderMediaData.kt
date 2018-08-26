@@ -23,4 +23,8 @@ sealed class ViewHolderMediaData {
       val album: String?
   ) : ViewHolderMediaData()
 
+  data class SeeMore(
+      val category: String
+  ) : ViewHolderMediaData()
+
 }

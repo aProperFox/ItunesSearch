@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.aproperfox.itunessearch.adapters.BroadSearchAdapter.ViewType.*
 import com.aproperfox.itunessearch.views.AlbumViewHolder
+import com.aproperfox.itunessearch.views.HeaderViewHolder
 import com.aproperfox.itunessearch.views.models.ViewHolderMediaData
 
 class BroadSearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -12,17 +13,19 @@ class BroadSearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     Header,
     Album,
     Artist,
-    Song
+    Song,
+    SeeMore
   }
 
   lateinit var items: List<ViewHolderMediaData>
 
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
       when (values()[viewType]) {
-        Header -> TODO()
-        Album -> AlbumViewHolder(parent = parent)
+        Header -> HeaderViewHolder(parent)
+        Album -> AlbumViewHolder(parent)
         Artist -> TODO()
         Song -> TODO()
+        SeeMore -> TODO()
       }
 
   override fun getItemCount(): Int = items.size
@@ -33,6 +36,7 @@ class BroadSearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         is ViewHolderMediaData.Artist -> Artist.ordinal
         is ViewHolderMediaData.Header -> Header.ordinal
         is ViewHolderMediaData.Song -> Song.ordinal
+        is ViewHolderMediaData.SeeMore -> SeeMore.ordinal
       }
 
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

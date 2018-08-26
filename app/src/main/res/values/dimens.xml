@@ -1,11 +1,12 @@
 <resources>
-    <dimen name="margin_small">8dp</dimen>
-    <dimen name="margin_mid">16dp</dimen>
-    <dimen name="margin_large">24dp</dimen>
+  <dimen name="margin_small">8dp</dimen>
+  <dimen name="margin_mid">16dp</dimen>
+  <dimen name="margin_large">24dp</dimen>
 
-    <dimen name="fab_margin">@dimen/margin_mid</dimen>
+  <dimen name="fab_margin">@dimen/margin_mid</dimen>
 
 
-    <dimen name="text_size_card_title">12sp</dimen>
-    <dimen name="text_size_card_content">10sp</dimen>
+  <dimen name="text_size_header">18sp</dimen>
+  <dimen name="text_size_card_title">14sp</dimen>
+  <dimen name="text_size_card_content">12sp</dimen>
 </resources>
