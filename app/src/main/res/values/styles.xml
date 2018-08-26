@@ -15,6 +15,28 @@
     <item name="windowNoTitle">true</item>
   </style>
 
+  <style name="AppTheme.TextAppearance" parent="TextAppearance.AppCompat">
+    <item name="android:fontFamily">sans-serif</item>
+  </style>
+
+  <style name="AppTheme.TextAppearance.CardTitle">
+    <item name="textSize">@dimen/text_size_card_title</item>
+    <item name="textColor">@color/colorPrimaryDark</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="AppTheme.TextAppearance.CardContent">
+    <item name="textSize">@dimen/text_size_card_content</item>
+    <item name="textColor">@color/colorPrimary</item>
+  </style>
+
+  <style name="AppTheme.TextAppearance.Header">
+    <item name="textSize">@dimen/text_size_header</item>
+    <item name="textColor">@color/colorPrimaryDark</item>
+    <item name="fontFamily">sans-serif-condensed</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
   <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
   <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>

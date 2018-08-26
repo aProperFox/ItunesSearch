@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/rootView"
+  android:layout_width="match_parent"
+  android:layout_height="@dimen/list_item_height"
+  android:clickable="true"
+  android:focusable="true">
+
+  <ImageView
+    android:id="@+id/imageViewArtist"
+    android:layout_width="@dimen/avatar_size"
+    android:layout_height="@dimen/avatar_size"
+    android:layout_marginBottom="@dimen/margin_small"
+    android:layout_marginStart="@dimen/margin_mid"
+    android:layout_marginTop="@dimen/margin_small"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:src="@android:color/darker_gray"/>
+
+  <TextView
+    android:id="@+id/textViewArtist"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margin_mid"
+    android:textAppearance="@style/AppTheme.TextAppearance.CardTitle"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/imageViewArtist"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="Look at me, I'm an artist"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -4,7 +4,9 @@
   <dimen name="margin_large">24dp</dimen>
 
   <dimen name="fab_margin">@dimen/margin_mid</dimen>
-
+  <dimen name="avatar_size">40dp</dimen>
+  <dimen name="list_item_height">56dp</dimen>
+  <dimen name="list_item_height_large">72dp</dimen>
 
   <dimen name="text_size_header">18sp</dimen>
   <dimen name="text_size_card_title">14sp</dimen>

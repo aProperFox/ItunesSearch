@@ -1,9 +1,11 @@
 package com.aproperfox.itunessearch.adapters
 
 import android.support.v7.widget.RecyclerView
+import android.view.View
 import android.view.ViewGroup
 import com.aproperfox.itunessearch.adapters.BroadSearchAdapter.ViewType.*
 import com.aproperfox.itunessearch.views.AlbumViewHolder
+import com.aproperfox.itunessearch.views.ArtistViewHolder
 import com.aproperfox.itunessearch.views.HeaderViewHolder
 import com.aproperfox.itunessearch.views.models.ViewHolderMediaData
 
@@ -23,7 +25,7 @@ class BroadSearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
       when (values()[viewType]) {
         Header -> HeaderViewHolder(parent)
         Album -> AlbumViewHolder(parent)
-        Artist -> TODO()
+        Artist -> ArtistViewHolder(parent, View.OnClickListener{ })
         Song -> TODO()
         SeeMore -> TODO()
       }
@@ -40,8 +42,11 @@ class BroadSearchAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
       }
 
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    val item = items[position]
     when (holder) {
-      is AlbumViewHolder -> holder.bind(items[position] as ViewHolderMediaData.Album)
+      is HeaderViewHolder -> holder.bind(item as ViewHolderMediaData.Header)
+      is AlbumViewHolder -> holder.bind(item as ViewHolderMediaData.Album)
+      is ArtistViewHolder -> holder.bind(item as ViewHolderMediaData.Artist)
     }
   }
 }
