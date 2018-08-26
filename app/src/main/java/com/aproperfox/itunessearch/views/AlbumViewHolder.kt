@@ -8,6 +8,9 @@ import com.aproperfox.itunessearch.views.models.PayloadData
 import com.aproperfox.itunessearch.views.models.ViewHolderMediaData
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.view_holder_album.view.*
+import android.util.TypedValue
+
+
 
 class AlbumViewHolder(parent: ViewGroup, private val clickListener: (PayloadData) -> Unit) :
     BaseViewHolder(
@@ -17,10 +20,7 @@ class AlbumViewHolder(parent: ViewGroup, private val clickListener: (PayloadData
 
   init {
     itemView.apply {
-      isClickable = true
-      isFocusable = true
-      setBackgroundResource(android.R.drawable.list_selector_background)
-      setOnClickListener { clickListener(data.payloadData) }
+      setOnClickListener { clickListener(data.payloadData!!) }
     }
   }
 

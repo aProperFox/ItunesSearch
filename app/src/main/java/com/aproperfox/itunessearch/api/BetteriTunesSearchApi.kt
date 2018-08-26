@@ -15,7 +15,7 @@ interface BetteriTunesSearchApi {
   fun search(
       term: String,
       locale: Locale = DEFAULT_LOCALE,
-      media: MediaType? = null,
+      media: MediaType? = MediaType.All,
       entity: Entity? = null,
       attribute: Attribute? = null,
       @IntRange(from = 0, to = 250) limit: Int? = null,

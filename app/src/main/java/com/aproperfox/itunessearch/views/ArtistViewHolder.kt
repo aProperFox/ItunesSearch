@@ -18,10 +18,7 @@ class ArtistViewHolder(parent: ViewGroup, private val clickListener: (PayloadDat
 
   init {
     itemView.apply {
-      isClickable = true
-      isFocusable = true
-      setBackgroundResource(android.R.drawable.list_selector_background)
-      setOnClickListener { clickListener(data.payloadData) }
+      setOnClickListener { clickListener(data.payloadData!!) }
     }
   }
 

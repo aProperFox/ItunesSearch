@@ -70,7 +70,7 @@ class SelectCategoryActivity : AppCompatActivity() {
           when (state) {
             is SelectCategoryViewState.Content -> adapter.items = state.items
             SelectCategoryViewState.Loading -> TODO()
-            SelectCategoryViewState.Empty -> TODO()
+            SelectCategoryViewState.Empty -> adapter.items = emptyList()
             is SelectCategoryViewState.Error -> Snackbar.make(window.decorView, "Error:\n${state.error}", Snackbar.LENGTH_SHORT)
           }
         }, {
@@ -117,13 +117,13 @@ class SelectCategoryActivity : AppCompatActivity() {
     anim.duration = resources.getInteger(R.integer.reveal_anim_duration).toLong()
     anim.start()
     searchView.requestFocus()
-    val inputService = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     anim.addListener(object : Animator.AnimatorListener {
       override fun onAnimationRepeat(animation: Animator?) {
       }
 
       override fun onAnimationEnd(animation: Animator?) {
-        inputService.showSoftInput(searchView, InputMethodManager.SHOW_FORCED)
+        val inputService = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputService.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
         fab.visibility = View.INVISIBLE
       }
 
