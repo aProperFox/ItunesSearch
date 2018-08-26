@@ -42,6 +42,29 @@
     android:tint="@android:color/white"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:srcCompat="@android:drawable/ic_search_category_default"/>
+    app:srcCompat="@drawable/ic_search"/>
+
+  <android.support.design.widget.BottomNavigationView
+    android:id="@+id/bottomBar"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@color/iTunesBottomRight"
+    android:paddingEnd="@dimen/margin_mid"
+    android:paddingStart="0dp"
+    android:visibility="gone"
+    app:itemTextColor="@android:color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <android.support.v7.widget.SearchView
+      android:id="@+id/searchView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textAppearance="@style/AppTheme.TextAppearance.Search"
+      app:iconifiedByDefault="false"
+      app:searchIcon="@drawable/ic_search"/>
+
+  </android.support.design.widget.BottomNavigationView>
 
 </android.support.constraint.ConstraintLayout>
