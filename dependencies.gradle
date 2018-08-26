@@ -1,0 +1,25 @@
+ext {
+  versions = [
+      kotlin          : '1.2.61',
+      support         : '27.1.1',
+      constraintLayout: '1.1.2',
+      gson            : '2.8.5',
+      junit           : '4.12',
+      okHttp          : '3.11.0',
+      picasso         : '2.71828',
+      retrofit        : '2.4.0',
+      rxJava          : '2.2.0'
+  ]
+  dependencies = [
+      kotlin          : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+      appCompat       : "com.android.support:appcompat-v7:$versions.support",
+      constraintLayout: "com.android.support.constraint:constraint-layout:$versions.constraintLayout",
+      design          : "com.android.support:design:$versions.support",
+      gson            : "com.google.code.gson:gson:$versions.gson",
+      junit           : "junit:junit:$versions.junit",
+      okHttp          : "com.squareup.okhttp3:okhttp:$versions.okHttp",
+      picasso         : "com.squareup.picasso:picasso:$versions.picasso",
+      retrofit        : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+      rxJava          : "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+  ]
+}
