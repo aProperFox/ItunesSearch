@@ -8,6 +8,7 @@ ext {
       okHttp          : '3.11.0',
       picasso         : '2.71828',
       retrofit        : '2.4.0',
+      rxAndroid       : '2.1.0',
       rxJava          : '2.2.0'
   ]
   dependencies = [
@@ -21,6 +22,7 @@ ext {
       okHttp          : "com.squareup.okhttp3:okhttp:$versions.okHttp",
       picasso         : "com.squareup.picasso:picasso:$versions.picasso",
       retrofit        : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+      rxAndroid       : "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
       rxJava          : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
       rxJavaAdapter   : "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
   ]

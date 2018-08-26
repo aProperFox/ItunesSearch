@@ -10,6 +10,7 @@ import com.aproperfox.itunessearch.views.models.PayloadData
 import com.aproperfox.itunessearch.views.models.ViewHolderMediaData
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposables
+import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.BehaviorSubject
 
 class SelectCategoryActivityViewModel(
@@ -22,60 +23,63 @@ class SelectCategoryActivityViewModel(
   override val stateChanges: Observable<SelectCategoryViewState> = state
 
   override fun search(keyword: String) {
-    if (disposable.isDisposed) {
-      iTunesSearchManager.search(keyword)
-          .map { results ->
-            results.filter {
-              it.kind in listOf(Kind.Album, Kind.Song, Kind.ArtistFor)
-            }.map { result ->
-              when (result.kind) {
-                Kind.Book -> TODO()
-                Kind.Album -> ViewHolderMediaData(
-                    DisplayData.Album(
-                        imageUrl = result.artworkUrl100,
-                        title = result.collectionName,
-                        artist = result.artistName
-                    ),
-                    PayloadData(
-                        result.collectionId,
-                        MediaType.Music,
-                        result.collectionViewUrl!!
-                    )
-                )
-                Kind.CoachedAudio -> TODO()
-                Kind.FeatureMovie -> TODO()
-                Kind.InteractiveBooklet -> TODO()
-                Kind.MusicVideo -> TODO()
-                Kind.PdfPodcast -> TODO()
-                Kind.PodcastEpisode -> TODO()
-                Kind.SoftwarePackage -> TODO()
-                Kind.Song -> ViewHolderMediaData(
-                    DisplayData.Song(
-                        title = result.trackName,
-                        artist = result.artistName,
-                        album = result.collectionName
-                    ),
-                    PayloadData(
-                        result.trackId,
-                        MediaType.Music,
-                        result.trackViewUrl!!
-                    )
-                )
-                Kind.TvEpisode -> TODO()
-                Kind.ArtistFor -> ViewHolderMediaData(
-                    DisplayData.Artist(
-                        imageUrl = result.artworkUrl100,
-                        name = result.artistName
-                    ),
-                    PayloadData(
-                        result.collectionId,
-                        MediaType.Music,
-                        result.artistViewUrl!!
-                    )
-                )
+    if (keyword.isNotBlank() && keyword.length > 1) {
+      if (disposable.isDisposed) {
+        iTunesSearchManager.search(keyword)
+            .subscribeOn(Schedulers.io())
+            .map { results ->
+              results.filter {
+                it.kind in listOf(Kind.Album, Kind.Song, Kind.ArtistFor)
+              }.map { result ->
+                when (result.kind) {
+                  Kind.Book -> TODO()
+                  Kind.Album -> ViewHolderMediaData(
+                      DisplayData.Album(
+                          imageUrl = result.artworkUrl100,
+                          title = result.collectionName,
+                          artist = result.artistName
+                      ),
+                      PayloadData(
+                          result.collectionId,
+                          MediaType.Music,
+                          result.collectionViewUrl!!
+                      )
+                  )
+                  Kind.CoachedAudio -> TODO()
+                  Kind.FeatureMovie -> TODO()
+                  Kind.InteractiveBooklet -> TODO()
+                  Kind.MusicVideo -> TODO()
+                  Kind.PdfPodcast -> TODO()
+                  Kind.PodcastEpisode -> TODO()
+                  Kind.SoftwarePackage -> TODO()
+                  Kind.Song -> ViewHolderMediaData(
+                      DisplayData.Song(
+                          title = result.trackName,
+                          artist = result.artistName,
+                          album = result.collectionName
+                      ),
+                      PayloadData(
+                          result.trackId,
+                          MediaType.Music,
+                          result.trackViewUrl!!
+                      )
+                  )
+                  Kind.TvEpisode -> TODO()
+                  Kind.ArtistFor -> ViewHolderMediaData(
+                      DisplayData.Artist(
+                          imageUrl = result.artworkUrl100,
+                          name = result.artistName
+                      ),
+                      PayloadData(
+                          result.collectionId,
+                          MediaType.Music,
+                          result.artistViewUrl!!
+                      )
+                  )
+                }
               }
-            }
-          }
+            }.subscribe({ state.onNext(SelectCategoryViewState.Content(it)) }, { state.onNext(SelectCategoryViewState.Error(it.message!!)) })
+      }
     }
   }
 
