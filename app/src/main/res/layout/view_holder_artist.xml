@@ -5,14 +5,14 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:id="@+id/rootView"
   android:layout_width="match_parent"
-  android:layout_height="@dimen/list_item_height"
+  android:layout_height="@dimen/list_item_height_one_item"
   android:clickable="true"
   android:focusable="true">
 
   <ImageView
     android:id="@+id/imageViewArtist"
-    android:layout_width="@dimen/avatar_size"
-    android:layout_height="@dimen/avatar_size"
+    android:layout_width="@dimen/list_item_image_size"
+    android:layout_height="@dimen/list_item_image_size"
     android:layout_marginBottom="@dimen/margin_small"
     android:layout_marginStart="@dimen/margin_mid"
     android:layout_marginTop="@dimen/margin_small"

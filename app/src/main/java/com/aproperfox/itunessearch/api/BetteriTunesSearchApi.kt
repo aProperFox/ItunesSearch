@@ -4,6 +4,8 @@ import android.support.annotation.IntRange
 import com.aproperfox.itunessearch.api.models.Attribute
 import com.aproperfox.itunessearch.api.models.Entity
 import com.aproperfox.itunessearch.api.models.MediaType
+import com.aproperfox.itunessearch.api.models.SearchResults
+import io.reactivex.Single
 import java.util.*
 
 interface BetteriTunesSearchApi {
@@ -22,13 +24,13 @@ interface BetteriTunesSearchApi {
       @IntRange(from = 0, to = 250) limit: Int? = null,
       version: Int? = DEFAULT_VERSION,
       explicit: Boolean? = false
-  )
+  ) : Single<SearchResults>
 
-  fun lookupByArtistId(amgArtistId: Int)
-  fun lookupByAlbumId(amgAlbumId: Int)
-  fun lookupByVideoId(amgVideoId: Int)
-  fun lookupByiTunesId(iTunesId: Int)
-  fun lookupByUPC(upc: Int)
-  fun lookupByISBN(isbn: Int)
+  fun lookupByArtistId(amgArtistId: Int) : Single<SearchResults>
+  fun lookupByAlbumId(amgAlbumId: Int) : Single<SearchResults>
+  fun lookupByVideoId(amgVideoId: Int) : Single<SearchResults>
+  fun lookupByiTunesId(iTunesId: Int) : Single<SearchResults>
+  fun lookupByUPC(upc: Int) : Single<SearchResults>
+  fun lookupByISBN(isbn: Int) : Single<SearchResults>
 
 }

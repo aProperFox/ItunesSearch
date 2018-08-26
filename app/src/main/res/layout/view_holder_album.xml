@@ -4,54 +4,52 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="60dp"
+  android:layout_height="@dimen/list_item_height_large"
+  android:background="@android:drawable/list_selector_background"
   android:clickable="true"
-  android:focusable="true"
-  android:background="@android:drawable/list_selector_background">
+  android:focusable="true">
 
   <ImageView
     android:id="@+id/imageViewAlbum"
-    android:layout_width="60dp"
-    android:layout_height="0dp"
+    android:layout_width="@dimen/list_item_image_size"
+    android:layout_height="@dimen/list_item_image_size"
+    android:layout_marginBottom="@dimen/margin_mid"
+    android:layout_marginStart="@dimen/margin_mid"
+    android:layout_marginTop="@dimen/margin_mid"
     android:scaleType="centerCrop"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:src="@android:drawable/ic_menu_gallery"/>
+    tools:src="@android:color/darker_gray"/>
 
   <TextView
     android:id="@+id/textViewTitle"
     android:layout_width="0dp"
     android:layout_height="0dp"
-    android:fontFamily="sans-serif"
-    android:paddingEnd="@dimen/margin_small"
-    android:paddingStart="@dimen/margin_small"
-    android:paddingBottom="2dp"
-    android:textSize="@dimen/text_size_card_title"
-    android:textStyle="bold"
+    android:layout_marginBottom="@dimen/text_view_even_spacing"
+    android:layout_marginEnd="@dimen/margin_mid"
+    android:layout_marginStart="@dimen/margin_mid"
     android:gravity="bottom"
-    android:textColor="@color/iTunesBar"
-    app:layout_constraintTop_toTopOf="parent"
+    android:textAppearance="@style/AppTheme.TextAppearance.CardTitle"
+    app:layout_constraintBottom_toTopOf="@+id/textViewArtist"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/imageViewAlbum"
-    app:layout_constraintBottom_toTopOf="@+id/textViewArtist"
+    app:layout_constraintTop_toTopOf="parent"
     tools:text="Blanco McDonco"/>
 
   <TextView
     android:id="@+id/textViewArtist"
     android:layout_width="0dp"
     android:layout_height="0dp"
-    android:fontFamily="sans-serif"
-    android:paddingEnd="@dimen/margin_small"
-    android:paddingStart="@dimen/margin_small"
-    android:paddingTop="2dp"
-    android:textSize="@dimen/text_size_card_content"
+    android:layout_marginEnd="@dimen/margin_mid"
+    android:layout_marginStart="@dimen/margin_mid"
+    android:layout_marginTop="@dimen/text_view_even_spacing"
     android:gravity="top"
-    android:textColor="@color/iTunesText"
+    android:textAppearance="@style/AppTheme.TextAppearance.CardContent"
+    app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toEndOf="@+id/imageViewAlbum"
     app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
-    app:layout_constraintBottom_toBottomOf="parent"
     tools:text="Pat Benetar"/>
 
 </android.support.constraint.ConstraintLayout>

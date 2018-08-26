@@ -1,7 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="@dimen/list_item_height_two_item">
+
+  <TextView
+    android:id="@+id/textViewSongTitle"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="@dimen/text_view_even_spacing"
+    android:layout_marginEnd="@dimen/margin_mid"
+    android:layout_marginStart="@dimen/margin_mid"
+    android:gravity="bottom"
+    android:textAppearance="@style/AppTheme.TextAppearance.CardTitle"
+    app:layout_constraintBottom_toTopOf="@id/textViewArtistAlbum"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="This is a song title"/>
+
+  <TextView
+    android:id="@+id/textViewArtistAlbum"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginEnd="@dimen/margin_mid"
+    android:layout_marginStart="@dimen/margin_mid"
+    android:layout_marginTop="@dimen/text_view_even_spacing"
+    android:gravity="top"
+    android:textAppearance="@style/AppTheme.TextAppearance.CardContent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewSongTitle"
+    tools:text="Artist - Album"/>
 
 </android.support.constraint.ConstraintLayout>

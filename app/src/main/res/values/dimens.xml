@@ -1,13 +1,24 @@
 <resources>
+  <!-- Padding dimensions -->
+  <dimen name="text_view_even_spacing">2dp</dimen>
   <dimen name="margin_small">8dp</dimen>
   <dimen name="margin_mid">16dp</dimen>
   <dimen name="margin_large">24dp</dimen>
 
+  <!-- Custom dimensions -->
   <dimen name="fab_margin">@dimen/margin_mid</dimen>
-  <dimen name="avatar_size">40dp</dimen>
-  <dimen name="list_item_height">56dp</dimen>
+
+  <!-- Material dimensions
+       https://material.io/design/components/lists.html#specs -->
+  <dimen name="list_item_action_icon_size">24dp</dimen>
+  <dimen name="list_item_image_size">40dp</dimen>
+  <dimen name="list_item_preview_width">100dp</dimen>
+  <dimen name="list_item_preview_height">56dp</dimen>
+  <dimen name="list_item_height_one_item">56dp</dimen>
+  <dimen name="list_item_height_two_item">64dp</dimen>
   <dimen name="list_item_height_large">72dp</dimen>
 
+  <!-- Text dimens -->
   <dimen name="text_size_header">18sp</dimen>
   <dimen name="text_size_card_title">14sp</dimen>
   <dimen name="text_size_card_content">12sp</dimen>

@@ -1,13 +1,12 @@
 package com.aproperfox.itunessearch
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
-import com.aproperfox.itunessearch.R.id.fab
 import com.aproperfox.itunessearch.adapters.BroadSearchAdapter
+import com.aproperfox.itunessearch.views.models.PayloadData
 
 import kotlinx.android.synthetic.main.activity_select_category.*
 
@@ -15,12 +14,16 @@ class SelectCategoryActivity : AppCompatActivity() {
 
   private lateinit var adapter: BroadSearchAdapter
 
+  private val clickListener: (PayloadData) -> Unit = { payloadData ->
+
+  }
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_select_category)
     setSupportActionBar(toolbar)
 
-    adapter = BroadSearchAdapter()
+    adapter = BroadSearchAdapter(clickListener)
     recycler.adapter = adapter
     recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 

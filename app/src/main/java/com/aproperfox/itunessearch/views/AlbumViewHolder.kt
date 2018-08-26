@@ -1,22 +1,28 @@
 package com.aproperfox.itunessearch.views
 
-import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import com.aproperfox.itunessearch.R
+import com.aproperfox.itunessearch.views.models.DisplayData
+import com.aproperfox.itunessearch.views.models.PayloadData
 import com.aproperfox.itunessearch.views.models.ViewHolderMediaData
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.view_holder_album.view.*
 
-class AlbumViewHolder(parent: ViewGroup, private val clickListener: View.OnClickListener? = null) :
-    RecyclerView.ViewHolder(
+class AlbumViewHolder(parent: ViewGroup, private val clickListener: (PayloadData) -> Unit) :
+    BaseViewHolder(
         LayoutInflater.from(parent.context)
             .inflate(R.layout.view_holder_album, parent, false)
     ) {
 
-  fun bind(albumData: ViewHolderMediaData.Album) {
+  init {
+    itemView.setOnClickListener { clickListener(data.payloadData) }
+  }
+
+  override fun bind(data: ViewHolderMediaData) {
+    this.data = data
+    val albumData = data.displayData as? DisplayData.Album
+        ?: throw IllegalArgumentException("AlbumViewHolder must bind to Album display data")
     itemView.apply {
       Picasso.get()
           .load(albumData.imageUrl)
@@ -24,7 +30,6 @@ class AlbumViewHolder(parent: ViewGroup, private val clickListener: View.OnClick
           .into(imageViewAlbum)
       textViewTitle.text = albumData.title
       textViewArtist.text = albumData.artist
-      rootView.setOnClickListener(clickListener)
     }
   }
 }
